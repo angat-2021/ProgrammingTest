@@ -7,6 +7,7 @@ namespace ProgrammingTest
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            //This is just a test
         }
     }
 }

@@ -7,7 +7,7 @@ namespace ListExercises
     {
         static void Main(string[] args)
         {
-            Exercise3();
+            Exercise5();
             var friendsList = new List<string>();
            
             while (true) 
@@ -35,7 +35,8 @@ namespace ListExercises
             }
             
         }
-
+        //Write a program and ask the user to enter their name. Use an array to reverse the name and then store the result in a new string.
+        //Display the reversed name on the console.
         static void Exercise2()
         {
             Console.Write("Enter your name ");
@@ -51,6 +52,10 @@ namespace ListExercises
             //string reverseName = Convert.ToString(reverseCharacters);
             //Console.WriteLine(reverseName);
         }
+
+        // Write a program and ask the user to enter 5 numbers.
+        // If a number has been previously entered, display an error message and ask the user to re-try.
+        // Once the user successfully enters 5 unique numbers, sort them and display the result on the console.
         static void Exercise3()
         {
             var numbers = new List<int>();
@@ -75,6 +80,117 @@ namespace ListExercises
             }
             
 
+        }
+        static void Exercise4()
+        {
+            var numbers = new List<int>();
+           
+            string answer = "";
+            while (answer.ToUpper()!="QUIT")
+            {
+                Console.WriteLine("Enter number or (Type Quit to exit)");
+                 answer = Console.ReadLine();
+                if(answer.ToUpper()!="QUIT")
+                numbers.Add(Convert.ToInt32(answer));
+            }
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+
+                for (int j = i + 1; j < numbers.Count; j++)
+                {
+                    if (numbers[i] == numbers[j])
+                    {
+                        numbers.Remove(numbers[i]);
+                        j = 0;
+                    }
+                    
+                }
+
+            }
+            foreach (var item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        //Write a program and ask the user to continuously enter a number or type "Quit" to exit.
+        //The list of numbers may include duplicates.
+        //Display the unique numbers that the user has entered.
+        static void Exercise4Mosh()
+        {
+            var numbers = new List<int>();
+            while (true)
+            {
+                Console.WriteLine("Enter a number (Or type Quit to exit)");
+                string answer = Console.ReadLine();
+
+                if (answer.ToLower() == "quit")
+                    break;
+                numbers.Add(Convert.ToInt32(answer));
+            }
+            var uniqueNumbers = new List<int>();
+            foreach (var number in numbers)
+            {
+                if (!uniqueNumbers.Contains(number))
+                {
+                    uniqueNumbers.Add(number);
+                }
+            }
+
+            foreach (var unique in uniqueNumbers)
+            {
+                Console.WriteLine(unique);
+            }
+        }
+
+        //Write a program and ask the user to supply a list of comma separated numbers (e.g 5, 1, 9, 2, 10).
+        //If the list is empty or includes less than 5 numbers,
+        //display "Invalid List" and ask the user to re-try; otherwise, display the 3 smallest numbers in the list.
+        static void Exercise5()
+        {
+            var numbers = new List<int>();
+            string[] numberArray;
+
+            while (true)
+            {
+                Console.WriteLine("Input numbers separated by comma");
+                string input = Console.ReadLine();
+                if (!string.IsNullOrEmpty(input))
+                {
+                    numberArray = input.Split(",");
+                    if(numberArray.Length>=5)
+                    break;
+                }
+                
+                Console.WriteLine("Invalid List. Re-Try");
+            }
+            var minimum = new List<int>();
+            foreach (var number in numberArray)
+            {
+                numbers.Add(Convert.ToInt32(number));
+                
+            }
+                //Console.WriteLine($"First number in numbers list: { numbers[0]}");
+            while (minimum.Count<3)
+            {
+                int min = numbers[0]; 
+            foreach (var  num in numbers)
+            {
+                if (min>num)
+                {
+                    min = num;
+                }
+
+            }
+                minimum.Add(min);
+                
+                numbers.Remove(min);
+            }
+            Console.WriteLine("The smallest numbers in the list are: ");
+            foreach (var number in minimum)
+            {
+                Console.WriteLine(number);
+            }
         }
             
 

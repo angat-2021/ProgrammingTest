@@ -8,6 +8,16 @@ namespace StringFormatting
     {
         static void Main(string[] args)
         {
+            
+
+            var builder1 = new StringBuilder("Angat Nath Yogi");
+            builder1.Append('=', 5)
+                .AppendLine()
+                .Append(true);
+            Console.WriteLine(builder1);
+            builder1.Remove(5, 1);
+            Console.WriteLine(builder1);
+
             var builder = new StringBuilder("Hello world");
             builder
                 .Append('-', 10)

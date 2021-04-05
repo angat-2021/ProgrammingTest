@@ -35,7 +35,9 @@ namespace ExerciseStringBuilder
             string message = isConsecutivenumbers ? "Consecutive" : "Non consecutive";
             Console.WriteLine(message);
         }
-
+        // Write a program and ask the user to enter a few numbers separated by a hyphen.
+        // If the user simply presses Enter, without supplying an input, exit immediately; otherwise, check to see if there are duplicates.
+        // If so, display "Duplicate" on the console.
         static void Problem2()
         {
             Console.WriteLine("Please enter a few numbers, separated by hyphen '-'. For example: 56-78-89");
@@ -95,7 +97,10 @@ namespace ExerciseStringBuilder
                Console.WriteLine("Duplicate");
             }
         }
-
+        //Write a program and ask the user to enter a time value in the 24-hour time format (e.g. 19:00).
+        //A valid time should be between 00:00 and 23:59.
+        //If the time is valid, display "Ok"; otherwise, display "Invalid Time".
+        //If the user doesn't provide any values, consider it as invalid time.
         public static void Problem3()
         {
             Console.WriteLine("Enter a time value in 24-hour time format. Example, 19:00.");
@@ -128,6 +133,11 @@ namespace ExerciseStringBuilder
                 Console.WriteLine("Invalid Time");
             }
         }
+        //Write a program and ask the user to enter a few words separated by a space.
+        //Use the words to create a variable name with PascalCase.
+        //For example, if the user types: "number of students", display "NumberOfStudents".
+        //Make sure that the program is not dependent on the input.
+        //So, if the user types "NUMBER OF STUDENTS", the program should still display "NumberOfStudents".
         public static void Problem4()
         {
             Console.WriteLine("Enter words separated by space (Example: Hello everyone I hope all is well).");
@@ -177,6 +187,9 @@ namespace ExerciseStringBuilder
             }
             Console.WriteLine("No of vowels in the input is: {0}",count);
         }
+        //Write a program and ask the user to enter an English word.
+        //Count the number of vowels (a, e, o, u, i) in the word.
+        //So, if the user enters "inadequate", the program should display 6 on the console.
         public static void Problem5ii()
         {
             Console.WriteLine("Enter an English word.");
